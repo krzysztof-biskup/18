@@ -2,24 +2,24 @@ var movies = [
     {
         id: 1,
         title: 'Harry Potter',
-        desc: 'film o czarodzieju'
+        descdescription: 'film o czarodzieju'
     },
     {
         id: 2,
         title: 'Król Lew',
-        desc: 'Film o królu sawanny'
+        description: 'Film o królu sawanny'
     },
     {
         id: 3,
         title: 'Kurier',
-        desc: 'Nie wiem o czym jest ten film',
+        description: 'Nie wiem o czym jest ten film',
         img: 'https://ssl-gfx.filmweb.pl/po/01/92/810192/7874217.3.jpg',
     }
 ];
 var moviesElements = movies.map(function(movie){
     return React.createElement('li', {key: movie.id},
         React.createElement('h2', {}, movie.title),
-        React.createElement('p', {}, movie.desc),
+        React.createElement('p', {}, movie.description),
         React.createElement('img', {src: movie.img})
     );
 });
