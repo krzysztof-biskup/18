@@ -1,3 +1,9 @@
+var app = React.createElement(App);
+ReactDOM.render(app, document.getElementById('app'));
+
+
+
+=======
 var filmsList = [
     {
         id: 1,
@@ -45,3 +51,4 @@ var MoviesList = React.createClass ({
 var element = React.createElement(MoviesList, {item: filmsList})
 //console.log(element);
 ReactDOM.render(element, document.getElementById('app'));
+
