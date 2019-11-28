@@ -1,4 +1,6 @@
 var Counter = React.createClass ({
+   
+
     getInitialState: function() {
         return {
             counter: 0
@@ -11,19 +13,30 @@ var Counter = React.createClass ({
         });
     },
 
-    shouldComponentUpdate: function(){
+    shouldComponentUpdate: function(nextProps, nextState) {
+        console.log(nextProps);
+        console.log(nextState);
+
+        if  (nextState.counter === 1) {
+            return true;
+        } else {
+            return false;
+        }
         
     },
+
+    componentDidMount: function(){ 
+        console.log('komponent został wyrenderowany')
+    },    
 
     decrement: function() {
         this.setState({
             counter: this.state.counter - 1
         });
+        
     },
 
-    componentWillUnmount: function() {
-        console.log('odmontowany')
-    },
+   
 
     render: function() {
         return React.createElement('div', {},
@@ -31,6 +44,13 @@ var Counter = React.createClass ({
             React.createElement('button', {onClick: this.increment},'Increment'),
             React.createElement('button', {onClick: this.decrement}, 'Decrement'),
         );
-    }
+    },
+
+    componentWillUnmount: function() {
+        console.log('odmontowany')
+    },
+    componentWillMount: function(){
+        console.log('montowanie komponentu')
+    },
 });
 
