@@ -13,18 +13,6 @@ var Counter = React.createClass ({
         });
     },
 
-    shouldComponentUpdate: function(nextProps, nextState) {
-        console.log(nextProps);
-        console.log(nextState);
-
-        if  (nextState.counter === 1) {
-            return true;
-        } else {
-            return false;
-        }
-        
-    },
-
     componentDidMount: function(){ 
         console.log('komponent został wyrenderowany')
     },    
