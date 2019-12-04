@@ -1,3 +1,4 @@
+
 var contactForm = {
   firstName: '',
   lastName: '',
@@ -6,9 +7,9 @@ var contactForm = {
 
 var App = React.createClass({
   render: function() {
-    return <div className={'app form-group test'}>{
+    return (<div className={'app form-group test'}></div>,
         React.createElement(ContactForm, {contact: contactForm}),
-        React.createElement(Contacts, {items: contacts}, {})
-        }</div>      
+        React.createElement(Contacts, {items: contacts}, {})   
+  )
   }
 });
