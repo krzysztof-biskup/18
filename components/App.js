@@ -11,9 +11,9 @@ var App = React.createClass({
         React.createElement(ContactForm, {contact: contactForm}),
         React.createElement(Contacts, {items: contacts}, {}),
       )*/
-      <div className={'app form-group'}>
-      React.createElement(ContactForm, {contact: contactForm})
-      </div>
+      <div className={'app form-group'}>,   
+      </div>,
+       React.createElement(ContactForm, {contact: contactForm})
     );
   }
 });
