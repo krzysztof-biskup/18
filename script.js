@@ -16,6 +16,7 @@ var movies = [
         img: 'https://ssl-gfx.filmweb.pl/po/01/92/810192/7874217.3.jpg',
     }
 ];
+
 var moviesElements = movies.map(function(movie){
     return React.createElement('li', {key: movie.id},
         React.createElement('h2', {}, movie.title),
@@ -24,10 +25,25 @@ var moviesElements = movies.map(function(movie){
     );
 });
 
-var element = 
-    React.createElement('div', {},
-        React.createElement('h1', {}, 'Lista filmów'),
-        React.createElement('ul', {}, moviesElements)
-    );
+var Movie = React.createClass({
+    render: function() {
+        React.createElement('li', {key: movie.id},
+    React.createElement('h2', {}, movie.title),
+    React.createElement('p', {}, movie.desc),
+    React.createElement('img', {src: movie.img})
+    }
+})
 
-ReactDOM.render(element, document.getElementById('app'));
+
+var Element = React.createClass({
+    render: function(){
+        return ( React.createElement('div', {},
+            React.createElement('h1', {}, 'Lista filmów'),
+            React.createElement('ul', {}, )
+            )
+        )
+    }
+}),
+
+var app = React.createElement(Element)
+ReactDOM.render(app, document.getElementById('app'));
