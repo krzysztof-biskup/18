@@ -18,32 +18,30 @@ var movies = [
 ];
 
 var moviesElements = movies.map(function(movie){
-    return React.createElement('li', {key: movie.id},
-        React.createElement('h2', {}, movie.title),
-        React.createElement('p', {}, movie.desc),
-        React.createElement('img', {src: movie.img})
-    );
-});
+    return React.createElement(Movie, {movie: movie})    
+})
 
 var Movie = React.createClass({
     render: function() {
-        React.createElement('li', {key: movie.id},
-    React.createElement('h2', {}, movie.title),
-    React.createElement('p', {}, movie.desc),
-    React.createElement('img', {src: movie.img})
+        React.createElement('li', {key: this.props.movie.id},
+            React.createElement('h2', {}, this.props.movie.title),
+            React.createElement('p', {}, this.props.movie.desc),
+            React.createElement('img', {src: this.props.movie.img})
+        )
     }
 })
 
 
 var Element = React.createClass({
     render: function(){
-        return ( React.createElement('div', {},
-            React.createElement('h1', {}, 'Lista filmów'),
-            React.createElement('ul', {}, )
+        return ( 
+            React.createElement('div', {},
+                React.createElement('h1', {}, 'Lista filmów'),
+                React.createElement('ul', {}, moviesElements )
             )
         )
     }
 }),
 
-var app = React.createElement(Element)
+var app = React.createElement(Element);
 ReactDOM.render(app, document.getElementById('app'));
