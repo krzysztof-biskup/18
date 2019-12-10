@@ -23,7 +23,7 @@ var ContactForm = React.createClass ({
           value: this.props.contact.email,
           className: 'form-control'
         }),
-        React.createElement('button', {type: 'submit', className: 'btn btn-primary'}, "Dodaj kontakt")
+        <button className='btn btn-primary' type='submit'>Dodaj kontakt</button>
       )
     )
   },
